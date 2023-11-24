@@ -5,7 +5,7 @@ import NavBar from './NavBar.js';
 import DogCards from "./DogCards.js";
 import LoginPage from "./LoginPage.js";
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 
 export default function App() {
@@ -21,10 +21,10 @@ export default function App() {
         <div className="container">
           <NavBar showLogin={isLogin}/>
           <Routes>
-            <Route path="/" exact element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/funcat" element={<CatCards />} />
             <Route path="/fundog" element={<DogCards />} />
-            <Route path="/login" exact element={<LoginPage onLogin={logIn}/>} />
+            <Route path="/login" element={<LoginPage onLogin={logIn}/>} />
           </Routes>
         </div>
       </Router>

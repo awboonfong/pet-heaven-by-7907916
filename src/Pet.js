@@ -7,7 +7,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { useState } from "react";
 
 
-const Dogs = () => {
+const Pet = ({pet}) => {
   const [showForm, setShowForm] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
 
@@ -20,8 +20,8 @@ const Dogs = () => {
   const handleShowForm = () => {
     setShowForm(true);
   }
-  const webURL = "https://api.thedogapi.com/v1/images/search?has_breeds=1&api_key=live_xPOhd65gYc8omhaxUNKAfTDU9dakU9Xt6KrmURqT3aw65STlGv1ASm1tD4DVmNG3";
-
+  const webURL = "https://api.the"+pet+"api.com/v1/images/search?has_breeds=1&api_key=live_RdRbFkKgDV9ACmYOGVa5TGfbLOwn8XcaBiIpGsFeaFGJxDjLwvev3uu5YJVmRpvG";
+  console.log(webURL);
   const render = (data) => {
     if (data.loading === true) return <p>loading ...</p>;
 
@@ -122,4 +122,4 @@ const Dogs = () => {
   );
 };
 
-export default Dogs;
+export default Pet;
